@@ -1,11 +1,13 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../context/AuthContext';
 
-const PrivateRouter = ({ page }) => {
-  const user = sessionStorage.getItem('isLogin');
+export const PrivateRouter = ({ page }) => {
+  const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  if (user) {
+  if (isAuthenticated) {
     return page;
   } else {
     Swal.fire({
@@ -20,4 +22,15 @@ const PrivateRouter = ({ page }) => {
 
   return null;
 };
-export default PrivateRouter;
+
+export const PublicRouter = ({ page }) => {
+  const { isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  if (!isAuthenticated) {
+    return page;
+  } else {
+    // then을 이용해 alert 확인 버튼 클릭 후 로그인 페이지 이동하도록 구현
+    navigate('/mypage');
+  }
+};
