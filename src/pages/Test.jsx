@@ -1,4 +1,12 @@
+import TestForm from '../components/TestForm';
+import { StTitle } from '../shared/CommonStyle';
+
 const Test = () => {
-  return <div>Test</div>;
+  return (
+    <>
+      <StTitle>MBTI</StTitle>
+      <TestForm />
+    </>
+  );
 };
 export default Test;

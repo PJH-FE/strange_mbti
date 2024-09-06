@@ -10,7 +10,7 @@ const initialState = {
   id: '',
   password: ''
 };
-import Form from '../components/Form';
+import Form from '../components/AuthForm';
 import { StTitle } from '../shared/CommonStyle';
 
 const Login = () => {
