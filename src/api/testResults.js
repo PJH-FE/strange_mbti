@@ -1,18 +1,20 @@
-import axios from 'axios';
-
-const API_URL = 'http://localhost:5000/testResults';
-
-export const getTestResults = async () => {
-  const response = await axios.get(API_URL);
-  return response.data;
-};
+import { RESULT_API } from './api';
 
 export const createResult = async (result) => {
-  try {
-    const response = await axios.post(API_URL, result);
+  await RESULT_API.post('/results', result);
+};
 
-    const data = response.data;
-    if (data.success) {
-    }
-  } catch (error) {}
+export const updateRank = async (result) => {
+  const mbti = result.result;
+
+  // 현재 랭크 값을 가져옵니다.
+  const currentRanks = await RESULT_API.get('/rank');
+  const currentRank = currentRanks.data;
+
+  // 기존 값에 1을 더합니다.
+  const newValue = (currentRank[mbti] || 0) + 1;
+
+  await RESULT_API.patch(`/rank/${mbti}`, {
+    score: newValue
+  });
 };

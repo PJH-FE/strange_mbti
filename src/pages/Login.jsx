@@ -1,17 +1,15 @@
 import { useContext, useState } from 'react';
-import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { Bounce, toast } from 'react-toastify';
-
-const SERVER_API = 'https://moneyfulpublicpolicy.co.kr';
+import { toast } from 'react-toastify';
+import Form from '../components/AuthForm';
+import { StTitle } from '../shared/CommonStyle';
+import { USER_API } from '../api/api';
 
 const initialState = {
   id: '',
   password: ''
 };
-import Form from '../components/AuthForm';
-import { StTitle } from '../shared/CommonStyle';
 
 const Login = () => {
   const [formData, setFormData] = useState(initialState);
@@ -22,7 +20,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(SERVER_API + '/login', formData);
+      const response = await USER_API.post('/login', formData);
 
       const data = response.data;
       if (data.success) {
@@ -32,11 +30,7 @@ const Login = () => {
     } catch (error) {
       console.error('Login error:', error);
       toast.error(error.response.data.message, {
-        position: 'top-right',
-        autoClose: 3000,
-        closeOnClick: true,
-        theme: 'colored',
-        transition: Bounce
+        theme: 'colored'
       });
     }
   };
