@@ -1,33 +1,32 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { PrivateRouter, PublicRouter } from './PrivateRouter';
 import Main from '../pages/Main';
-import Login from '../pages/Login';
-import Join from '../pages/Join';
+import Login from '../pages/login/Login';
 import MyPage from '../pages/MyPage';
 import Test from '../pages/Test';
 import List from '../pages/List';
-import Header from '../layout/header/Header';
-import Footer from '../layout/footer/Footer';
 import Result from '../pages/Result';
+import Layout from '../layout/Layout';
+import Join from '../pages/join/Join';
 
 const Router = () => {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Main />} />
 
-          <Route path="/join" element={<PublicRouter page={<Join />} />} />
-          <Route path="/login" element={<PublicRouter page={<Login />} />} />
+            <Route path="/join" element={<PublicRouter page={<Join />} />} />
+            <Route path="/login" element={<PublicRouter page={<Login />} />} />
 
-          <Route path="/mypage" element={<PrivateRouter page={<MyPage />} />} />
-          <Route path="/test" element={<PrivateRouter page={<Test />} />} />
+            <Route path="/mypage" element={<PrivateRouter page={<MyPage />} />} />
+            <Route path="/test" element={<PrivateRouter page={<Test />} />} />
 
-          <Route path="/list" element={<List />} />
-          <Route path="/result" element={<PrivateRouter page={<Result />} />} />
+            <Route path="/list" element={<List />} />
+            <Route path="/result" element={<PrivateRouter page={<Result />} />} />
+          </Route>
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );

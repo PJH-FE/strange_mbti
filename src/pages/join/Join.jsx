@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { USER_API } from '../api/api';
+import { USER_API } from '../../api/api';
 import { toast } from 'react-toastify';
-import Form from '../components/AuthForm';
-import { StTitle } from '../shared/CommonStyle';
+import Form from '../../components/AuthForm';
+import { StTitle } from '../../shared/CommonStyle';
+import { StJoinArea } from './joinStyle';
 
 const initialState = {
   id: '',
@@ -35,10 +36,10 @@ const Join = () => {
   };
 
   return (
-    <>
+    <StJoinArea>
       <StTitle>회원가입</StTitle>
       <Form handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} />
-    </>
+    </StJoinArea>
   );
 };
 export default Join;

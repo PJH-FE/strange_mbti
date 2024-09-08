@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
             Authorization: `Bearer ${token}`
           }
         }).catch((error) => {
-          toast.error(error.response.result.split(':')[1]);
+          toast.error(error.response.data.message);
           logout();
           return;
         });

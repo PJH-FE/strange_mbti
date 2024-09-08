@@ -1,4 +1,4 @@
-import { Mutation, useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { RESULT_API } from '../api/api';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';

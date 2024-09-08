@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { StButton, StForm, StInput, StLabel } from '../shared/CommonStyle';
 
 const Form = ({ handleSubmit, setFormData, formData }) => {
   const location = useLocation().pathname;
@@ -9,11 +10,11 @@ const Form = ({ handleSubmit, setFormData, formData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <StForm onSubmit={handleSubmit}>
       {location === '/join' && (
         <div>
-          <label htmlFor="nickname">Nickname</label>
-          <input
+          <StLabel htmlFor="nickname">Nickname</StLabel>
+          <StInput
             name="nickname"
             id="nickname"
             type="text"
@@ -24,13 +25,13 @@ const Form = ({ handleSubmit, setFormData, formData }) => {
       )}
 
       <div>
-        <label htmlFor="id">ID</label>
-        <input name="id" id="id" type="text" value={formData.id} onChange={(e) => handleInputChange(e)} />
+        <StLabel htmlFor="id">ID</StLabel>
+        <StInput name="id" id="id" type="text" value={formData.id} onChange={(e) => handleInputChange(e)} />
       </div>
 
       <div>
-        <label htmlFor="password">Password</label>
-        <input
+        <StLabel htmlFor="password">Password</StLabel>
+        <StInput
           name="password"
           id="password"
           type="password"
@@ -42,13 +43,15 @@ const Form = ({ handleSubmit, setFormData, formData }) => {
 
       {location === '/login' ? (
         <>
-          <button type="submit">Login</button>
-          <Link to="/join">Join</Link>
+          <StButton type="submit">Login</StButton>
+          <Link to="/join" className="join-button flex items-center justify-center">
+            Join
+          </Link>
         </>
       ) : (
-        <button type="submit">Join</button>
+        <StButton type="submit">Join</StButton>
       )}
-    </form>
+    </StForm>
   );
 };
 export default Form;

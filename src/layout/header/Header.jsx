@@ -17,7 +17,12 @@ const Header = () => {
 
       {isAuthenticated ? (
         <>
-          <a href="#none" onClick={handleLogout}>
+          <a
+            href="#none"
+            onClick={(e) => {
+              e.preventDefault();
+              handleLogout();
+            }}>
             로그아웃
           </a>
           <Link to="/mypage">마이페이지</Link>

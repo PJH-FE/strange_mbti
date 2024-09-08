@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Form from '../components/AuthForm';
-import { StTitle } from '../shared/CommonStyle';
-import { USER_API } from '../api/api';
+import Form from '../../components/AuthForm';
+import { StTitle } from '../../shared/CommonStyle';
+import { USER_API } from '../../api/api';
+import background from '../../assets/login-bg.png';
+import { StImgArea, StInfo, StLoginArea } from './loginStyle';
 
 const initialState = {
   id: '',
@@ -37,8 +39,17 @@ const Login = () => {
 
   return (
     <>
-      <StTitle>로그인</StTitle>
-      <Form handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} />
+      <div className="flex">
+        <StImgArea>
+          <img src={background} />
+        </StImgArea>
+        <StLoginArea className="flex flex-col items-center justify-center ">
+          <StTitle>로그인</StTitle>
+          <StInfo>로그인 하고 MBTI 검사를 받아보세요!</StInfo>
+
+          <Form handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} />
+        </StLoginArea>
+      </div>
     </>
   );
 };
