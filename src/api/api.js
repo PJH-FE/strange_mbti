@@ -5,5 +5,5 @@ export const USER_API = axios.create({
 });
 
 export const RESULT_API = axios.create({
-  baseURL: 'https://sugary-scarce-story.glitch.me'
+  baseURL: 'http://localhost:5000'
 });

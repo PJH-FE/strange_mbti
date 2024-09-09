@@ -9,10 +9,11 @@ export const updateRank = async (result) => {
 
   // 현재 랭크 값을 가져옵니다.
   const currentRanks = await RESULT_API.get('/rank');
-  const currentRank = currentRanks.data;
+  const currentRank = currentRanks?.data;
+  const currentScore = currentRank.filter((rank) => rank.id === mbti)[0].score;
 
   // 기존 값에 1을 더합니다.
-  const newValue = (currentRank[mbti] || 0) + 1;
+  const newValue = (currentScore || 0) + 1;
 
   await RESULT_API.patch(`/rank/${mbti}`, {
     score: newValue

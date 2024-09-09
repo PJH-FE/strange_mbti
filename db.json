@@ -1,22 +1,6 @@
 {
   "results": [
     {
-      "id": "3b79",
-      "userID": "jhtest",
-      "userNickname": "엠비티아이",
-      "result": "ISFP",
-      "date": "2024년 9월 10일",
-      "visibility": true
-    },
-    {
-      "id": "83cd",
-      "userID": "jhtest",
-      "userNickname": "엠비티아이",
-      "result": "ISTP",
-      "date": "2024년 9월 10일",
-      "visibility": true
-    },
-    {
       "id": "64aa",
       "result": "ISFP",
       "date": "2024년 9월 10일",
@@ -42,7 +26,7 @@
     },
     {
       "id": "ESTJ",
-      "score": 0
+      "score": 1
     },
     {
       "id": "ESFJ",
@@ -86,7 +70,7 @@
     },
     {
       "id": "ISFP",
-      "score": 1
+      "score": 2
     }
   ]
 }

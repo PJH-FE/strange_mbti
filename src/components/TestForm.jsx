@@ -6,7 +6,7 @@ import { AuthContext } from '../context/AuthContext';
 import { createResult, updateRank } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { StButtonArea, StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
+import { StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
 
 const TestForm = () => {
   const { userData } = useContext(AuthContext);
@@ -53,8 +53,8 @@ const TestForm = () => {
       visibility: true
     };
 
-    await createResult(resultData);
     await updateRank(resultData);
+    await createResult(resultData);
     navigate('/result', { state: resultData });
   };
 
