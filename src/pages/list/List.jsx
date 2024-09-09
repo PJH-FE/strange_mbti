@@ -67,24 +67,25 @@ const List = () => {
                   <span className="ml-auto">{result.date}</span>/<span>{result.userNickname}</span>
                 </StResultTop>
 
-                {userData?.id === result.userID && (
-                  <StResultBottom>
-                    <div>{mbtiDescriptions[result.result]}</div>
-
-                    <button
-                      onClick={() => {
-                        modifyResult(result.id);
-                      }}>
-                      {result.visibility ? '비공개로 전환' : '공개로 전환'}
-                    </button>
-                    <button
-                      onClick={() => {
-                        deleteResult(result.id);
-                      }}>
-                      삭제
-                    </button>
-                  </StResultBottom>
-                )}
+                <StResultBottom>
+                  <div>{mbtiDescriptions[result.result]}</div>
+                  {userData?.id === result.userID && (
+                    <>
+                      <button
+                        onClick={() => {
+                          modifyResult(result.id);
+                        }}>
+                        {result.visibility ? '비공개로 전환' : '공개로 전환'}
+                      </button>
+                      <button
+                        onClick={() => {
+                          deleteResult(result.id);
+                        }}>
+                        삭제
+                      </button>
+                    </>
+                  )}
+                </StResultBottom>
               </StResultBox>
             )
           );
