@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../assets/logo.png';
+import { StHeader, StNav } from './headerStyle';
 
 const Header = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
@@ -12,28 +14,36 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <div>로고</div>
+    <>
+      <StHeader>
+        <Link to="/" className="block w-[80px]">
+          <img src={logo} alt="로고" />
+        </Link>
 
-      {isAuthenticated ? (
-        <>
-          <a
-            href="#none"
-            onClick={(e) => {
-              e.preventDefault();
-              handleLogout();
-            }}>
-            로그아웃
-          </a>
-          <Link to="/mypage">마이페이지</Link>
-        </>
-      ) : (
-        <>
-          <Link to="/login">로그인</Link>
-          <Link to="/join">회원 가입</Link>
-        </>
-      )}
-    </header>
+        <StNav>
+          {isAuthenticated ? (
+            <>
+              <a
+                href="#none"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLogout();
+                }}>
+                LogOut
+              </a>
+              <Link to="/mypage">MyPage</Link>
+            </>
+          ) : (
+            <>
+              <Link to="/login">LogIn</Link>
+              <Link to="/join">Join</Link>
+            </>
+          )}
+        </StNav>
+      </StHeader>
+
+      <div className="h-[100px]"></div>
+    </>
   );
 };
 export default Header;

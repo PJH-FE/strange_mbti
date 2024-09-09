@@ -6,6 +6,7 @@ import { AuthContext } from '../context/AuthContext';
 import { createResult, updateRank } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { StButtonArea, StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
 
 const TestForm = () => {
   const { userData } = useContext(AuthContext);
@@ -41,8 +42,8 @@ const TestForm = () => {
 
     const result = mbtiCalculator(testResults);
     const resultData = {
-      userID: userData.id,
-      userNickname: userData.nickname,
+      userID: userData?.id,
+      userNickname: userData?.nickname,
       result,
       date: new Date().toLocaleString('ko-KR', {
         year: 'numeric',
@@ -58,33 +59,35 @@ const TestForm = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col">
       {questions.map((question) => {
         return (
-          <div key={question.id}>
-            <div>{question.question}</div>
-            <button
-              className={testResults[question.id] ? 'on' : undefined}
-              onClick={() => {
-                handleClickButton(question.id, true);
-              }}>
-              네
-            </button>
-            <button
-              className={!testResults[question.id] ? 'on' : undefined}
-              onClick={() => {
-                handleClickButton(question.id, false);
-              }}>
-              아니오
-            </button>
-          </div>
+          <StQuestionLine key={question.id}>
+            <div className="text-[22px] pr-[16px]">{question.question}</div>
+            <div className="flex gap-[12px] shrink-0">
+              <StTestButton
+                className={testResults[question.id] ? 'on' : undefined}
+                onClick={() => {
+                  handleClickButton(question.id, true);
+                }}>
+                네
+              </StTestButton>
+              <StTestButton
+                className={!testResults[question.id] && testResults[question.id] !== undefined ? 'on' : undefined}
+                onClick={() => {
+                  handleClickButton(question.id, false);
+                }}>
+                아니오
+              </StTestButton>
+            </div>
+          </StQuestionLine>
         );
       })}
 
-      <button type="submit" onClick={handleSubmitResults}>
+      <StSubmitButton type="submit" onClick={handleSubmitResults}>
         제출하기
-      </button>
-    </>
+      </StSubmitButton>
+    </div>
   );
 };
 export default TestForm;

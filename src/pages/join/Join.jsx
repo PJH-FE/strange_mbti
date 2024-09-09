@@ -37,7 +37,7 @@ const Join = () => {
 
   return (
     <StJoinArea>
-      <StTitle>회원가입</StTitle>
+      <StTitle className="mb-[40px]">Join</StTitle>
       <Form handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} />
     </StJoinArea>
   );

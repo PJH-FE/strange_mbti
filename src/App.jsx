@@ -3,6 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';
 import Router from './shared/Router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import './App.css';
 
 const queryClient = new QueryClient();
 

@@ -49,7 +49,7 @@ const Form = ({ handleSubmit, setFormData, formData }) => {
           </Link>
         </>
       ) : (
-        <StButton type="submit">Join</StButton>
+        <StButton type="submit">Submit</StButton>
       )}
     </StForm>
   );

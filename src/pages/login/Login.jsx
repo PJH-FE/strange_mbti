@@ -6,7 +6,7 @@ import Form from '../../components/AuthForm';
 import { StTitle } from '../../shared/CommonStyle';
 import { USER_API } from '../../api/api';
 import background from '../../assets/login-bg.png';
-import { StImgArea, StInfo, StLoginArea } from './loginStyle';
+import { StImgArea, StInfo, StLoginArea, StLoginWrap } from './loginStyle';
 
 const initialState = {
   id: '',
@@ -39,17 +39,17 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex">
+      <StLoginWrap>
         <StImgArea>
           <img src={background} />
         </StImgArea>
-        <StLoginArea className="flex flex-col items-center justify-center ">
+        <StLoginArea className="flex flex-col items-center justify-center">
           <StTitle>로그인</StTitle>
           <StInfo>로그인 하고 MBTI 검사를 받아보세요!</StInfo>
 
           <Form handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} />
         </StLoginArea>
-      </div>
+      </StLoginWrap>
     </>
   );
 };
