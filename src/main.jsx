@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
+import 'pretendard/dist/web/static/pretendard.css';
 import './reset.css';
 import './index.css';
 

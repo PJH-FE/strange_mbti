@@ -1,4 +1,86 @@
 {
-  "users": [],
-  "results": []
+  "results": [
+    {
+      "id": "3b79",
+      "userID": "jhtest",
+      "userNickname": "엠비티아이",
+      "result": "ISFP",
+      "date": "2024년 9월 10일",
+      "visibility": true
+    },
+    {
+      "id": "83cd",
+      "userID": "jhtest",
+      "userNickname": "엠비티아이",
+      "result": "ISTP",
+      "date": "2024년 9월 10일",
+      "visibility": true
+    }
+  ],
+  "rank": [
+    {
+      "id": "ENTJ",
+      "score": 0
+    },
+    {
+      "id": "ENTP",
+      "score": 0
+    },
+    {
+      "id": "ENFJ",
+      "score": 0
+    },
+    {
+      "id": "ENFP",
+      "score": 0
+    },
+    {
+      "id": "ESTJ",
+      "score": 0
+    },
+    {
+      "id": "ESFJ",
+      "score": 0
+    },
+    {
+      "id": "ESTP",
+      "score": 0
+    },
+    {
+      "id": "ESFP",
+      "score": 0
+    },
+    {
+      "id": "INTJ",
+      "score": 0
+    },
+    {
+      "id": "INTP",
+      "score": 0
+    },
+    {
+      "id": "INFJ",
+      "score": 0
+    },
+    {
+      "id": "INFP",
+      "score": 0
+    },
+    {
+      "id": "ISTJ",
+      "score": 0
+    },
+    {
+      "id": "ISFJ",
+      "score": 0
+    },
+    {
+      "id": "ISTP",
+      "score": 1
+    },
+    {
+      "id": "ISFP",
+      "score": 1
+    }
+  ]
 }
