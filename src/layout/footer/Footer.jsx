@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <span className="flex items-center justify-center text-[14px] mt-[24px]">
-          Designed by PJH / Icons by{' '}
+          Designed by PJH / Icons by&nbsp;
           <Link to="https://icons8.kr/icons" target="_blank">
             ICONS 8
           </Link>
