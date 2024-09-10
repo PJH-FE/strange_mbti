@@ -42,7 +42,8 @@ const MyPage = () => {
 
   // 내 검사 결과 목록
   const myResult = results?.filter((result) => result?.userID === userData?.id);
-  const myMBTI = myResult ? myResult[0].result : null;
+  console.log(myResult);
+  const myMBTI = myResult ? myResult[0]?.result : null;
   // 공개/비공개 전환
   const changeVisible = useChangeVisible();
   const modifyResult = (id) => {
