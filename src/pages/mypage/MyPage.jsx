@@ -39,7 +39,6 @@ const MyPage = () => {
 
   // 결과 전부 불러오기
   const { data: results } = useFetchResults();
-  console.log(results);
 
   // 내 검사 결과 목록
   const myResult = results?.filter((result) => result?.userID === userData?.id);
