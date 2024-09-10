@@ -1,14 +1,14 @@
 import { USER_API } from '../../api/api';
-import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
+import { useEffect, useState } from 'react';
 import { useChangeVisible, useDeleteResult, useFetchResults } from '../../queries/useTestQueries';
 import { StResultBottom, StResultBox, StResultTop, StTitle } from '../../shared/CommonStyle';
 import { mbtiDescriptions } from '../../data/mbtiPoints';
 import { StNickname, StNicknameButton, StNicknameInput } from './mypageStyle';
 import edit from '../../assets/edit.png';
+import useUserStore from '../../zustand/userStore';
 
 const MyPage = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData } = useUserStore();
 
   const [userNickname, setUserNickname] = useState('');
   const [isModify, setIsModify] = useState(false);
