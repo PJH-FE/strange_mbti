@@ -42,7 +42,7 @@ const MyPage = () => {
 
   // 내 검사 결과 목록
   const myResult = results?.filter((result) => result?.userID === userData?.id);
-  console.log(myResult);
+  const myMBTI = myResult ? myResult[0].result : null;
   // 공개/비공개 전환
   const changeVisible = useChangeVisible();
   const modifyResult = (id) => {
@@ -63,7 +63,7 @@ const MyPage = () => {
         {/* 유저 정보 */}
         <div className="w-[100%]">
           <div className="flex items-center gap-[16px] text-[24px] mb-[16px]">
-            내 MBTI는? <span className="font-star">{myResult[0]?.result}</span>
+            내 MBTI는? <span className="font-star">{myMBTI}</span>
           </div>
 
           <StNickname>
