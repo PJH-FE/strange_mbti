@@ -12,7 +12,6 @@ const TestForm = () => {
   const { userData } = useUserStore();
   const [testResults, setTestResults] = useState({});
   const navigate = useNavigate();
-  console.log(userData);
 
   const handleClickButton = (id, boolean) => {
     setTestResults({ ...testResults, [id]: boolean });
