@@ -17,8 +17,6 @@ const List = () => {
   // 결과 전부 출력
   const { data: results, isPending, isError } = useFetchResults();
 
-  console.log(typeof results);
-
   // 공개/비공개 전환
   const changeVisible = useChangeVisible();
   const modifyResult = (id) => {
