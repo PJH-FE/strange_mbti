@@ -23,7 +23,7 @@ export const useFetchRank = () => {
 // 결과 전부 출력
 const fetchResults = async () => {
   const response = await RESULT_API.get('/results');
-  return response.data;
+  return response.data.reverse();
 };
 
 export const useFetchResults = () => {

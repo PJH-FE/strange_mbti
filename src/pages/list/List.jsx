@@ -17,6 +17,8 @@ const List = () => {
   // 결과 전부 출력
   const { data: results, isPending, isError } = useFetchResults();
 
+  console.log(typeof results);
+
   // 공개/비공개 전환
   const changeVisible = useChangeVisible();
   const modifyResult = (id) => {
@@ -57,7 +59,7 @@ const List = () => {
       {/* 결과 목록 */}
       <div className="text-[36px] font-star mb-[24px]">MBTI Results</div>
       <div className="flex flex-col gap-[24px] w-full">
-        {results?.map((result) => {
+        {results?.reverse().map((result) => {
           return (
             (result.visibility || userData?.id === result.userID) && (
               <StResultBox key={crypto.randomUUID()}>
