@@ -27,10 +27,10 @@ const Footer = () => {
       </FixedBtn>
       <StFooter className="flex flex-col items-center justify-center h-[160px]">
         <div className="flex items-center justify-center gap-[16px]">
-          <Link to="https://github.com/PJH-FE" className="h-[30px]">
+          <Link to="https://github.com/PJH-FE" target="_blank" className="h-[30px]">
             <img src={github} alt="깃허브" className="h-full" />
           </Link>
-          <Link to="https://velog.io/@sjrmd781" className="h-[30px]">
+          <Link to="https://velog.io/@sjrmd781" target="_blank" className="h-[30px]">
             <img src={velog} alt="velog" className="h-full" />
           </Link>
         </div>
