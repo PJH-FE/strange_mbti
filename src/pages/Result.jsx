@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
 import { mbtiDescriptions, pointsImage } from '../data/mbtiPoints';
+import useUserStore from '../zustand/userStore';
 
 const Result = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData } = useUserStore();
   const location = useLocation().state;
   const userNickname = userData?.nickname;
   const result = location.result;

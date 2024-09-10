@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext';
 import { useChangeVisible, useDeleteResult, useFetchRank, useFetchResults } from '../../queries/useTestQueries';
 import { StResultBottom, StResultBox, StResultTop } from '../../shared/CommonStyle';
 import { mbtiDescriptions } from '../../data/mbtiPoints';
 import { StResultsList } from './listStyle';
+import useUserStore from '../../zustand/userStore';
 
 const List = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData } = useUserStore();
 
   const { data: rank } = useFetchRank();
 

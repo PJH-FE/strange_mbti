@@ -1,7 +1,9 @@
 {
   "results": [
     {
-      "id": "64aa",
+      "id": "753d",
+      "userID": "pjhtest",
+      "userNickname": "나는야 테스터",
       "result": "ISFP",
       "date": "2024년 9월 10일",
       "visibility": true
@@ -70,7 +72,7 @@
     },
     {
       "id": "ISFP",
-      "score": 2
+      "score": 4
     }
   ]
 }
