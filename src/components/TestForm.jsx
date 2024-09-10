@@ -1,17 +1,18 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { questions } from '../data/questions';
 import mbtiCalculator from '../utiils/mbtiCalculator';
 import { toast } from 'react-toastify';
-import { AuthContext } from '../context/AuthContext';
 import { createResult, updateRank } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
+import useUserStore from '../zustand/userStore';
 
 const TestForm = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData } = useUserStore();
   const [testResults, setTestResults] = useState({});
   const navigate = useNavigate();
+  console.log(userData);
 
   const handleClickButton = (id, boolean) => {
     setTestResults({ ...testResults, [id]: boolean });
