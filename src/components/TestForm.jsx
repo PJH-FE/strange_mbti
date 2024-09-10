@@ -11,6 +11,7 @@ import useUserStore from '../zustand/userStore';
 const TestForm = () => {
   const { userData } = useUserStore();
   const [testResults, setTestResults] = useState({});
+  const [canClick, setCanClick] = useState(true);
   const navigate = useNavigate();
 
   const handleClickButton = (id, boolean) => {
@@ -39,23 +40,26 @@ const TestForm = () => {
       toast.error('모든 문항에 답해주세요.', { theme: 'colored' });
       return;
     }
+    if (canClick) {
+      setCanClick(false);
 
-    const result = mbtiCalculator(testResults);
-    const resultData = {
-      userID: userData?.id,
-      userNickname: userData?.nickname,
-      result,
-      date: new Date().toLocaleString('ko-KR', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }),
-      visibility: true
-    };
+      const result = mbtiCalculator(testResults);
+      const resultData = {
+        userID: userData?.id,
+        userNickname: userData?.nickname,
+        result,
+        date: new Date().toLocaleString('ko-KR', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }),
+        visibility: true
+      };
 
-    await updateRank(resultData);
-    await createResult(resultData);
-    navigate('/result', { state: resultData });
+      await updateRank(resultData);
+      await createResult(resultData);
+      navigate('/result', { state: resultData });
+    }
   };
 
   return (
@@ -84,7 +88,12 @@ const TestForm = () => {
         );
       })}
 
-      <StSubmitButton type="submit" onClick={handleSubmitResults}>
+      <StSubmitButton
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          handleSubmitResults();
+        }}>
         제출하기
       </StSubmitButton>
     </div>
