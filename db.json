@@ -7,6 +7,14 @@
       "result": "ISFP",
       "date": "2024년 9월 10일",
       "visibility": true
+    },
+    {
+      "id": "95a5",
+      "userID": "jhtest",
+      "userNickname": "닉네임",
+      "result": "ISFP",
+      "date": "2024년 9월 10일",
+      "visibility": true
     }
   ],
   "rank": [
@@ -72,7 +80,7 @@
     },
     {
       "id": "ISFP",
-      "score": 4
+      "score": 5
     }
   ]
 }
