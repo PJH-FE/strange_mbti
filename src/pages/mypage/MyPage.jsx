@@ -42,7 +42,7 @@ const MyPage = () => {
 
   // 내 검사 결과 목록
   const myResult = results?.filter((result) => result?.userID === userData?.id);
-
+  const myMBTI = myResult ? myResult[0].result : null;
   // 공개/비공개 전환
   const changeVisible = useChangeVisible();
   const modifyResult = (id) => {
@@ -63,7 +63,7 @@ const MyPage = () => {
         {/* 유저 정보 */}
         <div className="w-[100%]">
           <div className="flex items-center gap-[16px] text-[24px] mb-[16px]">
-            내 MBTI는? <span className="font-star">{myResult?.reverse()[0]?.result}</span>
+            내 MBTI는? <span className="font-star">{myMBTI}</span>
           </div>
 
           <StNickname>
@@ -87,7 +87,7 @@ const MyPage = () => {
 
         {/* 검사 내역 */}
         <div className="flex flex-col gap-[24px] w-[100%] flex-shrink-0 md:w-[50%]">
-          {myResult?.reverse().map((result) => {
+          {myResult?.map((result) => {
             return (
               <StResultBox key={crypto.randomUUID()}>
                 <StResultTop>
