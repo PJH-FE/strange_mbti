@@ -40,3 +40,21 @@ export const StSubmitButton = styled.button`
   border-top: 2px solid #fff;
   font-family: 'StarFont', sans-serif;
 `;
+
+export const StLoadingDimmed = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'StarFont', sans-serif;
+`;

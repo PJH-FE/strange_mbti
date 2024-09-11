@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { createResult, updateRank } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
+import { StLoadingDimmed, StQuestionLine, StSubmitButton, StTestButton } from './testFormStyle';
 import useUserStore from '../zustand/userStore';
 
 const TestForm = () => {
@@ -64,6 +64,8 @@ const TestForm = () => {
 
   return (
     <div className="flex flex-col">
+      {!canClick && <StLoadingDimmed>Loading</StLoadingDimmed>}
+
       {questions.map((question) => {
         return (
           <StQuestionLine key={question.id}>
