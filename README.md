@@ -187,11 +187,25 @@ MBTI와 설명, 그리고 랜덤한 이미지가 같이 노출됩니다.
 <br/>
 <br/>
 
+# 🎢 개발 과정
+
+[개인프로젝트-MBTI 검사 사이트 (1)](https://velog.io/@sjrmd781/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-MBTI-%EA%B2%80%EC%82%AC-%EC%82%AC%EC%9D%B4%ED%8A%B8-1)
+
+[개인프로젝트-MBTI 검사 사이트 (2)](https://velog.io/@sjrmd781/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-MBTI-%EA%B2%80%EC%82%AC-%EC%82%AC%EC%9D%B4%ED%8A%B8-2)
+
+[개인프로젝트-MBTI 검사 사이트 (3)](https://velog.io/@sjrmd781/%EA%B0%9C%EC%9D%B8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-MBTI-%EA%B2%80%EC%82%AC-%EC%82%AC%EC%9D%B4%ED%8A%B8-3)
+
+<br/>
+<br/>
+<br/>
+
 # 💭 회고
 axios... Tanstack Query... Tailwind... zustand까지 머리가 터져나가는 프로젝트였던것 같습니다.
 
-그래도 Tanstack Query를 커스텀 훅으로도 사용해보고, json-server와 axios를 이용하여 데이터도 주고받아보고 많이 배우게 된 프로젝트가 되었습니다.
+**Good**👍  
+Tanstack Query를 커스텀 훅으로도 사용해보고, json-server와 axios를 이용하여 데이터도 주고받아보고 많이 배우게 된 프로젝트가 되었습니다.
 
+**Bad**🥲 
 당장 위 기술들을 능숙하게 바로바로 사용하지는 못하지만 다음에는 좀 더 수월하게 쓸 수 있을 것 같고, 그렇게 쓰다보면 어느새 능숙하게 사용 할 수 있으리라 생각합니다.
 
 아즈아 아즈아 다음 팀플도 화이또
